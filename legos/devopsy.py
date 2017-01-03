@@ -21,7 +21,8 @@ class Devopsy(Lego):
             self.opts = {'target': target}
             self.message = message
         except IndexError:
-            logger.error('Could not identify message source in message: {0!s}'.format(str(message)))
+            logger.error('Could not identify message source in message: {0!s}'
+                         .format(str(message)))
         args = self.devopsy(message['text'].split())
         self.reply(message, args, self.opts)
 
