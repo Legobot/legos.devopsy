@@ -22,7 +22,7 @@ setup(
     version='0.1.0',
     namespace_packages=name.split('.')[:-1],
     license='GPLv3',
-    descrption='[devops|security|dba|etc]reactions fetcher plugin for Legobot',
+    description='[devops|security|dba|etc]reactions fetcher plugin for Legobot',
     author='Brenton Briggs II',
     url='https://github.com/bbriggs/' + name,
     install_requires=['legobot>=1.0.1',
