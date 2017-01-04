@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from setuptools import setup, find_packages
-descrption = '[devops|security|dba|etc]reactions fetcher plugin for Legobot'
+description = '[devops|security|dba|etc]reactions fetcher plugin for Legobot'
 name = 'legos.devopsy'
 setup(
     name=name,
