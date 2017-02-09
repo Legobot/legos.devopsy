@@ -39,17 +39,23 @@ class Devopsy(Lego):
             !devopsy
         """
 
-        base = {
-                'dev': 'https://devopsreactions.tumblr.com/',
-                'qa': 'https://qareacts.tumblr.com/',
-                'sec': 'https://securityreactions.tumblr.com/',
-                'dba': 'http://dbareactions.com/'
-               }
-
-        items = list(base.items())
-        key, val = random.choice(items)  # nosec
         args = ' '.join(self.message['text'].split()[1:])
-        if args and 'dev' in key:
+        if args:
+            base_main = {
+                'dev': 'https://devopsreactions.tumblr.com/',
+                'sec': 'https://securityreactions.tumblr.com/'
+            }
+            main_items = list(base_main.items())
+            key, val = random.choice(main_items)  # nosec
+        else:
+            base_alt = {
+                'qa': 'https://qareacts.tumblr.com/',
+                'dba': 'http://dbareactions.com/'
+            }
+            alt_items = list(base_alt.items())
+            key, val = random.choice(alt_items)  # nosec
+
+        if args and set(('dev', 'sec')) <= set(base_main):
             q = urlencode({'q': args})
             path = ''.join(['?', q])
         else:
@@ -80,5 +86,5 @@ class Devopsy(Lego):
 
     def get_help(self):
         help_text = "Enter a query or we'll pick a random one " \
-                 "Usage: !devopsy foofulquery"
+            "Usage: !devopsy foofulquery"
         return help_text

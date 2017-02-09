@@ -19,7 +19,7 @@ description = '[devops|security|dba|etc]reactions fetcher plugin for Legobot'
 name = 'legos.devopsy'
 setup(
     name=name,
-    version='0.1.0',
+    version='0.1.1',
     namespace_packages=name.split('.')[:-1],
     license='GPLv3',
     description='[devops|security|dba|etc]reactions fetcher plugin for '
